@@ -13,13 +13,31 @@
           box-shadow: @shadow;
 }
 
-.placeholder(@color: @input-color-placeholder) {
-  &::-moz-placeholder {
+.placeholder(@color) {
+  input[type="text"],
+  input {
     color: @color;
-    opacity: 1;
   }
-  &:-ms-input-placeholder { color: @color; }
-  &::-webkit-input-placeholder  { color: @color; }
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder { 
+    color: @color;
+    opacity:1;
+  }
+  input:-moz-placeholder, 
+  textarea:-moz-placeholder { 
+    color: @color;
+    opacity:1;
+  }
+  input::-moz-placeholder,
+  textarea::-moz-placeholder { 
+    color: @color;
+    opacity:1;
+  }
+  input:-ms-input-placeholder,
+  textarea:-ms-input-placeholder { 
+    color: @color;
+    opacity:1;
+  }
 }
 
 .transition(@transition) {
