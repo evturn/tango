@@ -1,5 +1,4 @@
 .navigation-wrapper {
-  
   .transition(all 0.2s ease);
   .animation-duration(0.6s);
   z-index: 10;
@@ -17,6 +16,7 @@
     padding-left: 0;
     padding-right: 0;
     padding-top: 10px;
+    overflow: auto;
     max-width: @lg;
     @media (min-width: @sm) {
       padding: 30px 25px 40px 25px;
@@ -28,16 +28,18 @@
     }
   }
   .nav-logo {
-    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
     @media (min-width: @sm) {
       margin-top: -15px;
     }
     .img-scale {
       width: 90px;
-      margin-left: auto;
-      margin-right: auto;
-      right: 0;
-      left: 0;
+      display: inline-block;
       position: absolute;
     }
   }

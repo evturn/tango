@@ -2,7 +2,8 @@ var BCTANGO = {
 
   init: function () {
 
-    $('.nav-hamburger').on('click', function() {
+    $('.navigation-open').on('click', function() {
+      console.log('sup');
       BCTANGO.openNavigation();
       BCTANGO.showLinks();
     });
