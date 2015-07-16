@@ -25,17 +25,16 @@ var BCTANGO = {
     var $wrapper = $('.navigation');
     if ($wrapper.hasClass('delay-short')) {
 
-      $wrapper.removeClass('delay-short');
-      $wrapper.removeClass('animated');
-      $wrapper.removeClass('slideOutUp');
+      $wrapper.removeClass('delay-short animated slideOutUp');
       $wrapper.addClass('animated slideInDown');
       $wrapper.removeClass('wrapper-hidden');
+
     } else {
 
       $wrapper.addClass('delay-short');
-      $wrapper.removeClass('animated');
-      $wrapper.removeClass('slideInDown');
+      $wrapper.removeClass('animated slideInDown');
       $wrapper.addClass('animated slideOutUp');
+    
     }
     
 
