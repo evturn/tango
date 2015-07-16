@@ -19,14 +19,22 @@
     .previous,
     .next {
       padding: 45px 0 45px;
-      font-family: @sans;
       text-align: center;
       width: 49%;
       display: inline-block;
       text-transform: uppercase;
+
+      .header-text {
+        font-family: @sans; 
+      }
     }
     .next {
       border-left: 1px solid @grey;
+
+      span {
+        font-size: 40px;
+        vertical-align: middle;
+      }
     }
 
   }
