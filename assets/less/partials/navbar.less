@@ -1,34 +1,43 @@
 .video-navbar {
   background-color: @grey;
   color: @secondary;
-  overflow: auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  @media (min-width: @sm) {
-    padding-top: 20px;
-    padding-bottom: 20px; 
+
+  .navbar-wrapper {
+    overflow: auto;
+    height: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  
   }
+
   .nav-hamburger-container,
   .nav-search-container {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  .nav-hamburger-container span:hover i,
-  .nav-hamburger-container span:hover p,
-  .nav-search-container span:hover i,
-  .nav-search-container span:hover p, {
-    .transition(0.2s);
-    color: @primary;
+    position: relative;
+    cursor: pointer;
+    &:hover,
+    &:hover p,
+    &:hover i, {
+      .transition(0.2s);
+      color: @primary;
+    }
   }
 
   .nav-hamburger-container { 
     float: left;
     cursor: pointer;
+    text-align: left;
+    z-index: 1;
+  }
+  .nav-search-container { 
+    float: right;
+    cursor: pointer;
+    text-align: right;
   }
   .nav-logo-container { 
     position: absolute;
     left: 0;
     right: 0;
+    top: 20px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -38,16 +47,11 @@
       display: inline-block;
     }
   }
-  .nav-search-container { 
-    cursor: pointer;
-    float: right;
-    text-align: right;
-  }
+
   .header-text { display: none; }
   .fa {
     display: inline-block;
     font-size: 2em;
-    cursor: pointer;
   }
   @media (min-width: @sm) {
     .header-text { 
