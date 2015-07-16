@@ -1,14 +1,43 @@
+.navigation {
+  background-color: @grey;
+  position: absolute;
+  z-index: 2;
+  height: 100vh;
+  width: 100%;
+
+  &.wrapper-hidden {
+    display: none;
+  }
+
+  .navigation-close {
+    cursor: pointer;
+    text-align: left;
+    z-index: 1;
+
+  }
+
+  .links-container {
+    text-align: center;
+    text-transform: uppercase;
 
 
-.links-container,
-.navigation-close {
-  .animation-duration(0.1s);
+    a {
+      text-decoration: none;
+    }
+  }
 }
+  .animate-long {
+    .animation-duration(0.7s);
+  }
 
-.trigger-delay {
-  .animation-delay(0.6s);
-}
+  .animate-short {
+    .animation-duration(0.2s);
+  }
 
-.trigger-delay-short {
-  .animation-delay(0.2s); 
-}
+  .wait-long {
+    .animation-delay(0.8s);
+  }
+
+  .wait-short {
+    .animation-delay(0.3s); 
+  }

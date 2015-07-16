@@ -1,6 +1,13 @@
 var BCTANGO = {
 
   init: function () {
+    $('.navigation-open').on('click', function() {
+      BCTANGO.toggleNavigation();
+    });
+
+    $('.navigation-close').on('click', function() {
+      BCTANGO.toggleNavigation();
+    });
 
     $('.search-field-open').on('click', function() {
       BCTANGO.openSearchBar();
@@ -11,6 +18,27 @@ var BCTANGO = {
     });
 
     // BCTANGO.bindPopovers();
+
+  },
+
+  toggleNavigation: function() {
+    var $wrapper = $('.navigation');
+    if ($wrapper.hasClass('delay-short')) {
+
+      $wrapper.removeClass('delay-short');
+      $wrapper.removeClass('animated');
+      $wrapper.removeClass('slideOutUp');
+      $wrapper.addClass('animated slideInDown');
+      $wrapper.removeClass('wrapper-hidden');
+    } else {
+
+      $wrapper.addClass('delay-short');
+      $wrapper.removeClass('animated');
+      $wrapper.removeClass('slideInDown');
+      $wrapper.addClass('animated slideOutUp');
+    }
+    
+
 
   },
 
