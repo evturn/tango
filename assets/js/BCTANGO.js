@@ -23,21 +23,25 @@ var BCTANGO = {
 
   toggleNavigation: function() {
     var $wrapper = $('.navigation');
+    var $copy = $('.navigation-wrapper');
+
     if ($wrapper.hasClass('delay-short')) {
 
       $wrapper.removeClass('delay-short animated slideOutUp');
+      $copy.removeClass('animated fadeOut');
       $wrapper.addClass('animated slideInDown');
+      $copy.addClass('delay-long animated fadeIn');
       $wrapper.removeClass('wrapper-hidden');
 
     } else {
 
       $wrapper.addClass('delay-short');
       $wrapper.removeClass('animated slideInDown');
+      $copy.removeClass('delay-long animated fadeIn');
+      $copy.addClass('animated fadeOut');
       $wrapper.addClass('animated slideOutUp');
     
     }
-    
-
 
   },
 
