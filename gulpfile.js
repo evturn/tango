@@ -1,18 +1,20 @@
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
+    browserSync = require('browser-sync').create(),
     $ = require('gulp-load-plugins')();
 
 var options = require('./config/gulp-options');
 var paths = require('./config/paths');
 
-gulp.task('default', ['less', 'lint', 'watch']);
+gulp.task('default', ['less', 'lint', 'watch', 'browsersync']);
 
 gulp.task('build', ['less', 'css', 'jslib', 'js']);
 
 gulp.task('watch', function() {
-  gulp.watch(paths.less.watch, ['less']);
-  gulp.watch(paths.jshint.watch, ['lint']);
-  gulp.watch(paths.js.watch, ['js']);
+  gulp.watch(paths.less.watch, ['less', 'reloader']);
+  gulp.watch(paths.jshint.watch, ['lint', 'reloader']);
+  gulp.watch(paths.js.watch, ['js', 'reloader']);
+  gulp.watch('*.hbs').on('change', browserSync.reload);
 });
 
 gulp.task('less', function() {
@@ -60,4 +62,12 @@ gulp.task('lint', function() {
     .pipe($.plumber(options.plumber))
     .pipe($.jshint())
     .pipe($.notify(options.notify.jshint));
+});
+
+gulp.task('reloader', ['less', 'js'], function() {
+  browserSync.reload();
+});
+
+gulp.task('browsersync', function() {
+  browserSync.init(options.browserSync);
 });

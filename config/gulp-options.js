@@ -8,6 +8,9 @@ var gulp = require('gulp-util'),
     $ = require('gulp-load-plugins')();
 
 module.exports = {
+  browserSync: {
+    proxy: 'localhost:3000'
+  },
   autoprefixer: {
     browsers: [
       '> 1%',
