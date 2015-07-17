@@ -27,7 +27,7 @@ var BCTANGO = {
   foldVideo: function() {
     $(window).on('mousewheel', function() {
       var $windowTop = $(this).scrollTop();
-      var $mainTop = $('.video-main').position().top;
+      var $mainTop = $('.pad').position().top;
       if ($mainTop <= $windowTop) {
         $('.video-main').addClass('scrolling');
         $('.video-main-info').addClass('scrolling');
