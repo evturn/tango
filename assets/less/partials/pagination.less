@@ -1,6 +1,9 @@
 .pagination {
   padding: 0;
   .list-section-container {
+    @media (min-width: @sm) {
+      max-width: none;
+    }
     .inner-wrapper;
     border-top: 2px solid @grey;
     border-bottom: 2px solid @grey;

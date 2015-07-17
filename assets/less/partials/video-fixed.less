@@ -1,0 +1,49 @@
+.collapsed {
+  display: none;
+}
+.scrolling-fixed {
+  vertical-align: top;
+  display: fixed;
+  height: 90px;
+  overflow: auto;
+  display: table-header-group;
+  position: relative;
+  .image-container .img-scale {
+    .box-shadow(1px 10px 43px -9px rgba(0,0,0,0.75););
+    height: 90px;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: @white;
+    position: fixed;
+  }
+  .label-container {
+    z-index: 3;
+    position: fixed;
+    padding: 7.5px 10px 7.5px;
+    top: 0;
+    left: 0;
+    background-color: @darkgrey;
+    color: @white;
+    .header-text {
+      font-size: 20px;
+    }
+  }
+  
+  .headline-container {
+    .box-shadow(1px 10px 43px -9px rgba(0,0,0,0.75););
+    background-color: @white;
+    width: 52%;
+    z-index: 2;
+    top: 0;
+    position: fixed;
+    right: 0;
+    padding: 0 10px;
+    height: 90px;
+    .header-text {
+      margin: 25px 15px;
+      font-size: 19px
+    }
+  }
+
+}
