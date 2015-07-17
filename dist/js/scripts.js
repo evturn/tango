@@ -1,6 +1,9 @@
 var BCTANGO = {
 
   init: function () {
+
+    BCTANGO.foldVideo();
+
     $('.navigation-open').on('click', function() {
       BCTANGO.toggleNavigation();
     });
@@ -19,6 +22,20 @@ var BCTANGO = {
 
     // BCTANGO.bindPopovers();
 
+  },
+
+  foldVideo: function() {
+    $(window).on('mousewheel', function() {
+      var $windowTop = $(this).scrollTop();
+      var $mainTop = $('.video-main').position().top;
+      if ($mainTop <= $windowTop) {
+        $('.video-main').addClass('scrolling');
+        $('.video-main-info').addClass('scrolling');
+      } else { 
+        $('.video-main').removeClass('scrolling');
+        $('.video-main-info').removeClass('scrolling');
+      }
+    });
   },
 
   toggleNavigation: function() {
