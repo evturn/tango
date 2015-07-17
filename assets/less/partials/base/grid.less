@@ -21,7 +21,10 @@
   max-width: @lg;
 }
 
+
 .gutter {
-  padding-left: 15px;
-  padding-right: 15px;
+  @media (max-width: @sm) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
