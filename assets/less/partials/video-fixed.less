@@ -4,28 +4,39 @@
 .scrolling-fixed {
   vertical-align: top;
   overflow: auto;
-  display: table-header-group;
+
   position: relative;
 
 }
 
 .fold-up-mobile {
+  .animation-duration(0.1s);
   display: none;
   cursor: pointer;
-  @media (min-width: @sm) {
-    box-shadow: none;
-    display: none;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  background-color: @white;
+  z-index: 2;
+  width: 100%;
+  .box-shadow(1px 10px 43px -9px rgba(0,0,0,0.75););
 
+  &.scrolling-fixed {
+    display: block;
+    
+    @media (min-width: @sm) {
+      box-shadow: none;
+      display: none;
+    }
+  }
 
   .img-scale {
     .animate-short;
-    .box-shadow(1px 10px 43px -9px rgba(0,0,0,0.75););
     z-index: 3;
-    top: 0;
-    left: 0;
+    width: 40%;
     background-color: @white;
-    position: fixed;
   }
 
   .label-container {
@@ -44,7 +55,6 @@
   
   .headline-container {
     .animate-short;
-    .box-shadow(1px 10px 43px -9px rgba(0,0,0,0.75););
     background-color: @white;
     width: 53%;
     z-index: 2;
@@ -52,20 +62,10 @@
     position: fixed;
     right: 0;
     padding: 0 10px;
-
-    @media (min-width: @sm) {
-      box-shadow: none;
-      padding: 40px 20px;
-    }
     
     .header-text {
       margin: 25px 15px;
       font-size: 19px;
-
-      @media (min-width: @sm) {
-        margin: auto;
-        
-      }
     }
   }
 }
@@ -129,32 +129,41 @@
       vertical-align: top;
       z-index: 2;
       display: inline-block;
-      width: 37%;
-      @media (min-width: @md) {
+      width: 50%;
+      @media (min-width: @lg) {
         width: 33%;
       }
 
       .header-text {
-        font-size: 24px;
+        font-size: 18px;
         @media (min-width: @md) {
+          font-size: 22px;
+        }
+        @media (min-width: @lg) {
           font-size: 26px;
         }
       }
 
       .badge {
-        margin-top: 10px;
-        margin-bottom: 10px;
+
+          margin-top: 10px;
+        @media (min-width: @lg) {
+          margin-bottom: 10px;
+        }
       }
 
       .header-text.caps {
         color: @primary;
         text-transform: uppercase;
-        font-size: 16px;
+        font-size: 14px;
+        @media (min-width: @lg) {
+          font-size: 16px;
+        }
       }
 
       .meta {
         margin-top: 10px;
-        font-size: 13px;
+        font-size: 12px;
         line-height: 1.4em;
         color: @darkgrey;
         @media (min-width: @md) {

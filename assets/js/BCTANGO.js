@@ -36,6 +36,7 @@ var BCTANGO = {
       var $lgWrapper = $('.fold-up-desktop');
       
       if ($main <= $windowTop) {
+        $foldUp.removeClass('slideOutUp');
         $lgWrapper.removeClass('scrolling-fixed slideOutUp');
         $lgWrapper.addClass('scrolling-fixed slideInDown');
         $image.addClass('slideInLeft');
@@ -48,10 +49,10 @@ var BCTANGO = {
 
       } 
       else {
+        $foldUp.addClass('slideOutUp');
         $lgWrapper.removeClass('scrolling-fixed slideInDown');
         $image.removeClass('slideInLeft');
         $imageLabel.removeClass('slideInLeft');
-        $lgWrapper.addClass('slideOutUp');
         $image.addClass('slideOutLeft');
         $imageLabel.addClass('slideOutLeft');
         $headline.removeClass('slideInRight');
