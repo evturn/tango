@@ -1,19 +1,32 @@
 .fold-up {
   display: none;
 }
+
+.scrolling-fixed,
+.image-container .img-scale,
+.headline-container {
+  height: 90px;
+
+  @media (min-width: @xs) {
+    height: 100px;
+  }
+}
+
 .scrolling-fixed {
   vertical-align: top;
   display: fixed;
-  height: 90px;
   overflow: auto;
   display: table-header-group;
   position: relative;
+
+  
+
   .image-container {
     .img-scale {
       .animate-short;
       .box-shadow(1px 10px 43px -9px rgba(0,0,0,0.75););
-      height: 90px;
-      z-index: 2;
+      
+      z-index: 3;
       top: 0;
       left: 0;
       background-color: @white;
@@ -22,7 +35,7 @@
   }
   .label-container {
     .animate-short;
-    z-index: 3;
+    z-index: 4;
     position: fixed;
     padding: 7.5px 10px 7.5px;
     top: 0;
@@ -38,13 +51,13 @@
     .animate-short;
     .box-shadow(1px 10px 43px -9px rgba(0,0,0,0.75););
     background-color: @white;
-    width: 52%;
+    width: 53%;
     z-index: 2;
     top: 0;
     position: fixed;
     right: 0;
     padding: 0 10px;
-    height: 90px;
+    
     .header-text {
       margin: 25px 15px;
       font-size: 19px
