@@ -33,25 +33,25 @@ var BCTANGO = {
       var $image = $('.fold-up .img-scale');
       var $imageLabel = $('.fold-up .label-container');
       var $headline = $('.fold-up .headline-container');
-
+      
       if ($main <= $windowTop) {
-        $image.addClass('animated slideInLeft');
-        $imageLabel.addClass('animated slideInLeft');
-        $image.removeClass('animated slideOutLeft');
-        $imageLabel.removeClass('animated slideOutLeft');
-        $headline.addClass('animated slideInRight');
-        $headline.removeClass('animated slideOutRight');
+        $image.addClass('slideInLeft');
+        $imageLabel.addClass('slideInLeft');
+        $image.removeClass('slideOutLeft');
+        $imageLabel.removeClass('slideOutLeft');
+        $headline.addClass('slideInRight');
+        $headline.removeClass('slideOutRight');
         $foldUp.addClass('scrolling-fixed');
 
       } 
       else {
-        $image.removeClass('animated slideInLeft');
-        $imageLabel.removeClass('animated slideInLeft');
-        $image.addClass('animated slideOutLeft');
-        $imageLabel.addClass('animated slideOutLeft');
+        $image.removeClass('slideInLeft');
+        $imageLabel.removeClass('slideInLeft');
+        $image.addClass('slideOutLeft');
+        $imageLabel.addClass('slideOutLeft');
 
-        $headline.removeClass('animated slideInRight');
-        $headline.addClass('animated slideOutRight');
+        $headline.removeClass('slideInRight');
+        $headline.addClass('slideOutRight');
 
       }
     });
@@ -62,15 +62,14 @@ var BCTANGO = {
     var $copy = $('.navigation-wrapper');
 
     if ($wrapper.hasClass('delay-short')) {
-
       $wrapper.removeClass('delay-short animated slideOutUp');
       $copy.removeClass('animated fadeOut');
       $wrapper.addClass('animated slideInDown');
       $copy.addClass('delay-long animated fadeIn');
       $wrapper.removeClass('wrapper-hidden');
 
-    } else {
-
+    } 
+    else {
       $wrapper.addClass('delay-short');
       $wrapper.removeClass('animated slideInDown');
       $copy.removeClass('delay-long animated fadeIn');
