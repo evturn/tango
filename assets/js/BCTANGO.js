@@ -25,13 +25,34 @@ var BCTANGO = {
   },
 
   foldVideo: function() {
+    
     $(window).on('scroll', function() {
       var $windowTop = $(this).scrollTop();
       var $main = $('.video-main-info').position().top;
+      var $foldUp = $('.fold-up');
+      var $image = $('.fold-up .img-scale');
+      var $imageLabel = $('.fold-up .label-container');
+      var $headline = $('.fold-up .headline-container');
+
       if ($main <= $windowTop) {
-        $('.collapsed').addClass('scrolling-fixed');
-      } else {  
-        $('.collapsed').removeClass('scrolling-fixed');
+        $image.addClass('animated slideInLeft');
+        $imageLabel.addClass('animated slideInLeft');
+        $image.removeClass('animated slideOutLeft');
+        $imageLabel.removeClass('animated slideOutLeft');
+        $headline.addClass('animated slideInRight');
+        $headline.removeClass('animated slideOutRight');
+        $foldUp.addClass('scrolling-fixed');
+
+      } 
+      else {
+        $image.removeClass('animated slideInLeft');
+        $imageLabel.removeClass('animated slideInLeft');
+        $image.addClass('animated slideOutLeft');
+        $imageLabel.addClass('animated slideOutLeft');
+
+        $headline.removeClass('animated slideInRight');
+        $headline.addClass('animated slideOutRight');
+
       }
     });
   },

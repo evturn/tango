@@ -1,4 +1,4 @@
-.collapsed {
+.fold-up {
   display: none;
 }
 .scrolling-fixed {
@@ -8,15 +8,17 @@
   overflow: auto;
   display: table-header-group;
   position: relative;
-  .image-container .img-scale {
-    .animate-short;
-    .box-shadow(1px 10px 43px -9px rgba(0,0,0,0.75););
-    height: 90px;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    background-color: @white;
-    position: fixed;
+  .image-container {
+    .img-scale {
+      .animate-short;
+      .box-shadow(1px 10px 43px -9px rgba(0,0,0,0.75););
+      height: 90px;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      background-color: @white;
+      position: fixed;
+    }
   }
   .label-container {
     .animate-short;
