@@ -1,0 +1,46 @@
+.video-share {
+
+  .popover {
+    position: relative;
+  }
+  
+  .popover-content {
+    text-align: center;
+    position: absolute;
+    width: 150px;
+    border-radius: 16%;
+    bottom: 58px;
+    right: -53px;
+    background-color: @grey;
+    padding: 30px 0 30px;
+    border: 1px solid @primary;
+    .meta {
+      text-align: left;
+      font-size: 18px;
+      margin-left: 10px;
+    }
+    .fa {
+      font-size: 1.2em;
+      background: transparent;
+    }
+    a {
+      color: @secondary;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .popover-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 45px;
+    right: 7.5px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid @grey;
+  }
+
+}

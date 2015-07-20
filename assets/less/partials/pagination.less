@@ -8,21 +8,23 @@
     height: 75px;
   }
   .list-section-container {
+
     @media (min-width: @sm) {
       max-width: none;
       float: left;
       padding: 15px;
 
     }
+    
     .inner-wrapper;
       border-top: 2px solid @grey;
       border-bottom: 2px solid @grey;
       text-align: center;
 
-    @media (min-width: @sm) {
-      border-top: none;
-      border-bottom: none;
-    }
+      @media (min-width: @sm) {
+        border-top: none;
+        border-bottom: none;
+      }
     
     .header-text {
       font-size: 24px;
@@ -39,11 +41,9 @@
 
 
   .btns-container {
-  
     @media (min-width: @sm) {
       float: right;
       width: 40%;
-
     }
 
     .previous,
@@ -53,6 +53,7 @@
       width: 49%;
       display: inline-block;
       text-transform: uppercase;
+
       @media (min-width: @sm) {
         padding: 15px 0 0;
       }
@@ -69,6 +70,5 @@
         vertical-align: middle;
       }
     }
-
   }
 }
