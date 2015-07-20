@@ -1,36 +1,41 @@
 .fold-up {
   display: none;
+  cursor: pointer;
 }
 
 .scrolling-fixed,
-.image-container .img-scale,
-.headline-container {
+.scrolling-fixed .image-container .img-scale,
+.scrolling-fixed .headline-container {
   height: 90px;
 
   @media (min-width: @xs) {
     height: 100px;
   }
+  
+  @media (min-width: @sm) {
+    height: 200px;
+  }
 }
 
 .scrolling-fixed {
   vertical-align: top;
-  display: fixed;
   overflow: auto;
   display: table-header-group;
   position: relative;
-
-  
 
   .image-container {
     .img-scale {
       .animate-short;
       .box-shadow(1px 10px 43px -9px rgba(0,0,0,0.75););
-      
       z-index: 3;
       top: 0;
       left: 0;
       background-color: @white;
       position: fixed;
+      @media (min-width: @sm) {
+        box-shadow: none;
+        padding: 40px 20px;
+      }
     }
   }
   .label-container {
@@ -57,6 +62,11 @@
     position: fixed;
     right: 0;
     padding: 0 10px;
+
+    @media (min-width: @sm) {
+      box-shadow: none;
+      padding: 40px 20px;
+    }
     
     .header-text {
       margin: 25px 15px;
@@ -64,4 +74,20 @@
     }
   }
 
+}
+
+.fold-up-desktop.scrolling-fixed{
+  @media (min-width: @sm) {
+    .box-shadow(1px 10px 43px -9px rgba(0,0,0,0.75););
+    .animate-short;
+    display: block;
+    position: fixed;
+    z-index: 2;
+    background-color: @white;
+    height: 280px;
+    background-color: #fff;
+    width: 100%;
+    top: 0;
+    right: 0;
+  }
 }

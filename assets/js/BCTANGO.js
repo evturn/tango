@@ -33,8 +33,11 @@ var BCTANGO = {
       var $image = $('.fold-up .img-scale');
       var $imageLabel = $('.fold-up .label-container');
       var $headline = $('.fold-up .headline-container');
+      var $lgWrapper = $('.fold-up .fold-up-desktop');
       
       if ($main <= $windowTop) {
+        $lgWrapper.removeClass('scrolling-fixed slideOutUp');
+        $lgWrapper.addClass('scrolling-fixed slideInDown');
         $image.addClass('slideInLeft');
         $imageLabel.addClass('slideInLeft');
         $image.removeClass('slideOutLeft');
@@ -45,11 +48,12 @@ var BCTANGO = {
 
       } 
       else {
+        $lgWrapper.removeClass('scrolling-fixed slideInDown');
         $image.removeClass('slideInLeft');
         $imageLabel.removeClass('slideInLeft');
+        $lgWrapper.addClass('slideOutUp');
         $image.addClass('slideOutLeft');
         $imageLabel.addClass('slideOutLeft');
-
         $headline.removeClass('slideInRight');
         $headline.addClass('slideOutRight');
 
