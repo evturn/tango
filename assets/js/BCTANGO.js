@@ -29,11 +29,11 @@ var BCTANGO = {
     $(window).on('scroll', function() {
       var $windowTop = $(this).scrollTop();
       var $main = $('.video-main-info').position().top;
-      var $foldUp = $('.fold-up');
-      var $image = $('.fold-up .img-scale');
-      var $imageLabel = $('.fold-up .label-container');
-      var $headline = $('.fold-up .headline-container');
-      var $lgWrapper = $('.fold-up .fold-up-desktop');
+      var $foldUp = $('.fold-up-mobile');
+      var $image = $('.fold-up-mobile .img-scale');
+      var $imageLabel = $('.fold-up-mobile .label-container');
+      var $headline = $('.fold-up-mobile .headline-container');
+      var $lgWrapper = $('.fold-up-desktop');
       
       if ($main <= $windowTop) {
         $lgWrapper.removeClass('scrolling-fixed slideOutUp');
