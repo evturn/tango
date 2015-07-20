@@ -1,5 +1,7 @@
 var BCTANGO = {
 
+  isVideoFolded: false,  
+
   init: function () {
 
     BCTANGO.foldVideo();
@@ -20,22 +22,27 @@ var BCTANGO = {
       BCTANGO.closeSearchBar();
     });
 
-    // BCTANGO.bindPopovers();
-
   },
 
   foldVideo: function() {
-    
     $(window).on('scroll', function() {
       var $windowTop = $(this).scrollTop();
-      var $main = $('.video-main-info').position().top;
+      var $main = $('.video-main-info').offset().top;
+
+      var shouldFoldVideo = $main < $windowTop;
+      if (shouldFoldVideo === BCTANGO.isVideoFolded) {
+        return;
+      }
+      
+      BCTANGO.isVideoFolded = shouldFoldVideo;
+
       var $foldUp = $('.fold-up-mobile');
       var $image = $('.fold-up-mobile .img-scale');
       var $imageLabel = $('.fold-up-mobile .label-container');
       var $headline = $('.fold-up-mobile .headline-container');
       var $lgWrapper = $('.fold-up-desktop');
       
-      if ($main <= $windowTop) {
+      if (BCTANGO.isVideoFolded) {
         $foldUp.removeClass('slideOutUp');
         $lgWrapper.removeClass('scrolling-fixed slideOutUp');
         $lgWrapper.addClass('scrolling-fixed slideInDown');
@@ -104,10 +111,6 @@ var BCTANGO = {
     });
     $closeSearch.addClass('hidden');
   },
-
-  // bindPopovers: function() {
-  //   $('[data-toggle="popover"]').popover({html: true});
-  // }
 
 };
 
