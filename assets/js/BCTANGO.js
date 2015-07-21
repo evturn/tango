@@ -30,11 +30,14 @@ var BCTANGO = {
 
   togglePopover: function(e) {
     var $popover = $(e.currentTarget).find('.popover');
-    if ($popover.hasClass('hidden')) {
+    if ($popover.hasClass('animated fadeOut')) {
       $popover.removeClass('hidden');
+      $popover.removeClass('animated fadeOut');
+      $popover.addClass('animated fadeIn');
     } 
     else {
-      $popover.addClass('animated fadeIn hidden');
+      $popover.removeClass('animated fadeIn');
+      $popover.addClass('animated fadeOut');
     }
   },
 
