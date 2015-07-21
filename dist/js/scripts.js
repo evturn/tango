@@ -1,14 +1,11 @@
 var BCTANGO = {
 
-  isVideoFolded: false,  
+  isVideoFolded: false,
 
   init: function () {
 
     BCTANGO.foldVideo();
 
-    $('.video-share').on('click', function(e) {
-      BCTANGO.togglePopover(e);
-    });
 
     $('.navigation-open').on('click', function() {
       BCTANGO.toggleNavigation();
@@ -26,15 +23,48 @@ var BCTANGO = {
       BCTANGO.closeSearchBar();
     });
 
+
+    $('.video-share').on('click', function(e) {
+      BCTANGO.togglePopover(e);
+    });
+
+    $(document).on('mouseup', function(e) {
+      console.log(e.target);
+      if (!$(e.target).hasClass('fa-share-alt')) {
+        
+        BCTANGO.setPopoverClose();
+      } else {
+        BCTANGO.setPopoverClose();
+
+      }
+
+    });
+
+  },
+
+  setPopoverClose: function() {
+    var $open = $('.invert');
+    var $popover = $open.find('.popover');
+    var $iconShare = $open.find('.fa.fa-share-alt');
+    var $iconClose = $open.find('.fa.fa-times');
+
+    $open.removeClass('invert');
+    $popover.removeClass('animated fadeIn');
+    $popover.addClass('animated fadeOut');
+    $iconClose.addClass('hidden');
+    $iconShare.removeClass('hidden');
   },
 
   togglePopover: function(e) {
+    var $target = $(e.target);
     var $btn = $(e.currentTarget);
     var $popover = $btn.find('.popover');
     var $iconShare = $btn.find('.fa.fa-share-alt');
     var $iconClose = $btn.find('.fa.fa-times');
 
-    if ($popover.hasClass('animated fadeOut')) {
+    console.log($target);
+
+    if ($popover.hasClass('animated fadeOut') && $target.hasClass('fa-share-alt')) {
       $btn.addClass('invert');
       $popover.removeClass('hidden');
       $popover.removeClass('animated fadeOut');
@@ -43,13 +73,7 @@ var BCTANGO = {
       $iconShare.addClass('hidden');
 
     } 
-    else {
-      $btn.removeClass('invert');
-      $popover.removeClass('animated fadeIn');
-      $popover.addClass('animated fadeOut');
-      $iconClose.addClass('hidden');
-      $iconShare.removeClass('hidden');
-    }
+    
   },
 
   foldVideo: function() {
