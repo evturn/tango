@@ -29,15 +29,24 @@ var BCTANGO = {
   },
 
   togglePopover: function(e) {
-    var $popover = $(e.currentTarget).find('.popover');
+    var $btn = $(e.currentTarget);
+    var $popover = $btn.find('.popover');
+    var $iconShare = $btn.find('.fa.fa-share-alt');
+    var $iconClose = $btn.find('.fa.fa-times');
+
     if ($popover.hasClass('animated fadeOut')) {
       $popover.removeClass('hidden');
       $popover.removeClass('animated fadeOut');
       $popover.addClass('animated fadeIn');
+      $iconClose.removeClass('hidden');
+      $iconShare.addClass('hidden');
+
     } 
     else {
       $popover.removeClass('animated fadeIn');
       $popover.addClass('animated fadeOut');
+      $iconClose.addClass('hidden');
+      $iconShare.removeClass('hidden');
     }
   },
 
