@@ -1,13 +1,8 @@
 .video-main-info {
   background-color: @grey;
-  height: 350px;
-
-  @media (min-width: @xs) {
-    height: 300px;
-  }
   
   @media (min-width: @sm) {
-    height: 400px;
+    padding-bottom: 40px;
   }
 }
 
@@ -51,7 +46,22 @@
       }
     }
   }
+}
 
+.ad-spot {
+  .bc-cta {
+    display: none;
+    height: 90px;
+    width: 728px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid @secondary;
+
+    @media (min-width: @md) {
+      display: block;
+    }
+  }
 }
 
 .info-wrapper,
@@ -59,8 +69,14 @@
   max-width: @lg - 150px;
 }
 
+.video-main-info {
+  .info-wrapper {
+    padding-top: 25px;
+
+  }
+}
+
 .info-wrapper {
-  padding-top: 25px;
   overflow: auto;
 }
 
