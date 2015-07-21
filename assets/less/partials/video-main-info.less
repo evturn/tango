@@ -1,13 +1,25 @@
 .video-main-info {
   background-color: @grey;
+  height: 350px;
+
+  @media (min-width: @xs) {
+    height: 300px;
+  }
+  
+  @media (min-width: @sm) {
+    height: 400px;
+  }
 }
 
 .video-main-wrapper {
-  max-width: @lg - 150px;
+  max-width: 950px;
 }
 
 .video-main-info .header-text {
   font-size: 25px;
+  @media (min-width: @sm) {
+    font-size: 30px;
+  }
   margin-bottom: 5px;
   line-height: 1.3em;
   }
@@ -19,9 +31,6 @@
 
 .video-main-info,
 .video-item-info {
-  padding-top: 20px;
-  padding-bottom: 60px;
-
 
   .meta {
     .secondary;
@@ -30,12 +39,16 @@
     line-height: 1.6em;
   }
 
-  .links-container .meta {
-    text-align: right;
-    
-    span {
-      color: @primary;
-      font-size: 25px;
+  .links-container {
+    padding-bottom: 60px;
+
+    .meta {
+      text-align: right;
+      
+      span {
+        color: @primary;
+        font-size: 25px;
+      }
     }
   }
 
@@ -47,6 +60,7 @@
 }
 
 .info-wrapper {
+  padding-top: 25px;
   overflow: auto;
 }
 
@@ -63,5 +77,9 @@
     float: right;
     display: inline-block;
     vertical-align: top;
+    .meta {
+      padding: 0;
+    }
+
   }
 }

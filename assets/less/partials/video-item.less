@@ -1,8 +1,3 @@
-.video-item {
-  padding-right: 30px;
-  padding-left: 15px;
-}
-
 .videos-list {
   margin-left: auto;
   margin-right: auto;
@@ -13,7 +8,10 @@
 .list-item {
   .gutter;
   text-align: left;
+  height: 400px;
+
   @media (min-width: @sm) {
+    height: 520px;
     width: 50%;
     display: inline-block;
     margin-left: -5px;
@@ -24,18 +22,59 @@
     width: 33.3333333333%;
   }
 
-}
-
+}  
 
 .video-item-info {
+  
+  .details-container {
+    padding-top: 25px;
+    padding-bottom: 40px;
+    width: 100%;
+
+    @media (min-width: @lg) {
+      .header-text {
+        font-size: 26px;
+      }
+    }
+
+    @media (min-width: @lg) {
+      width: 80%;
+      float: left;
+      display: inline-block;
+    }
+  }
+
   .meta {
     .font-thin;
+    line-height: 1.3em;
+    
   }
 }
+
+.video-item {
+  padding-right: 30px;
+  padding-left: 15px;
+
+  @media (min-width: @sm) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .video-container {
+    margin-top: -20px;
+  }
+
+}
+
+
 
 // Set first video in list to have box-shadow
 .videos-list .list-item:first-child .video-container {
   .box-shadow(0px -3px 19px -4px rgba(0,0,0,0.75););
   z-index: 1;
-  margin-top: -15px;
+
+  @media (min-width: @sm) {
+    box-shadow: none;
+  }
+
 }

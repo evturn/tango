@@ -29,11 +29,12 @@ var BCTANGO = {
     });
 
     $(document).on('mouseup', function(e) {
-      console.log(e.target);
+      
       if (!$(e.target).hasClass('fa-share-alt')) {
-        
         BCTANGO.setPopoverClose();
-      } else {
+
+      } 
+      else {
         BCTANGO.setPopoverClose();
 
       }
@@ -61,8 +62,6 @@ var BCTANGO = {
     var $popover = $btn.find('.popover');
     var $iconShare = $btn.find('.fa.fa-share-alt');
     var $iconClose = $btn.find('.fa.fa-times');
-
-    console.log($target);
 
     if ($popover.hasClass('animated fadeOut') && $target.hasClass('fa-share-alt')) {
       $btn.addClass('invert');
