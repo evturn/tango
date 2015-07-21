@@ -34,7 +34,7 @@ var BCTANGO = {
       $popover.removeClass('hidden');
     } 
     else {
-      $popover.addClass('hidden');
+      $popover.addClass('animated fadeIn hidden');
     }
   },
 
