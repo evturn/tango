@@ -6,6 +6,10 @@ var BCTANGO = {
 
     BCTANGO.foldVideo();
 
+    $('.video-share').on('click', function(e) {
+      BCTANGO.togglePopover(e);
+    });
+
     $('.navigation-open').on('click', function() {
       BCTANGO.toggleNavigation();
     });
@@ -22,6 +26,16 @@ var BCTANGO = {
       BCTANGO.closeSearchBar();
     });
 
+  },
+
+  togglePopover: function(e) {
+    var $popover = $(e.currentTarget).find('.popover');
+    if ($popover.hasClass('hidden')) {
+      $popover.removeClass('hidden');
+    } 
+    else {
+      $popover.addClass('hidden');
+    }
   },
 
   foldVideo: function() {
