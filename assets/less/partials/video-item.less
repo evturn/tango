@@ -10,10 +10,14 @@
   .gutter;
   text-align: left;
   @media (min-width: @sm) {
-    width: 33.3333333333%;
+    width: 50%;
     display: inline-block;
     margin-left: -5px;
     margin-right: -5px;
+  }
+
+  @media (min-width: @md) {
+    width: 33.3333333333%;
   }
 
 }
@@ -26,7 +30,7 @@
 }
 
 // Set first video in list to have box-shadow
-.videos-list .video-item:first-child .video-container {
+.videos-list .list-item:first-child .video-container {
   .box-shadow(0px -3px 19px -4px rgba(0,0,0,0.75););
   z-index: 1;
   margin-top: -15px;
