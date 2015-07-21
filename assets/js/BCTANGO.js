@@ -35,6 +35,7 @@ var BCTANGO = {
     var $iconClose = $btn.find('.fa.fa-times');
 
     if ($popover.hasClass('animated fadeOut')) {
+      $btn.addClass('invert');
       $popover.removeClass('hidden');
       $popover.removeClass('animated fadeOut');
       $popover.addClass('animated fadeIn');
@@ -43,6 +44,7 @@ var BCTANGO = {
 
     } 
     else {
+      $btn.removeClass('invert');
       $popover.removeClass('animated fadeIn');
       $popover.addClass('animated fadeOut');
       $iconClose.addClass('hidden');
