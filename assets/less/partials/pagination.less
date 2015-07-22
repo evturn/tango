@@ -5,14 +5,13 @@
     width: 100%;
     overflow: auto;
     border-top: 1px solid @grey;
-    height: 75px;
   }
   .list-section-container {
 
     @media (min-width: @sm) {
       max-width: none;
       float: left;
-      padding: 15px;
+      padding: 15px 0 0 5%;
 
     }
     
@@ -30,10 +29,12 @@
       font-size: 24px;
       font-weight: 600;
       font-family: @sans;
-      padding: 25px 0 25px;
+
 
       @media (min-width: @sm) {
-        padding: 0;
+        padding: 45px 0;
+        font-size: 26px;
+        color: @primary;
       }
     }
   }
@@ -54,20 +55,34 @@
       display: inline-block;
       text-transform: uppercase;
 
-      @media (min-width: @sm) {
-        padding: 15px 0 0;
-      }
-
       .header-text {
         font-family: @sans;
+
+        @media (min-width: @sm) {
+          font-size: 20px;
+        }
+
       }
     }
+
+    .previous {
+
+      @media (min-width: @sm) {
+        color: @primary;
+      }
+    }
+
     .next {
       border-left: 1px solid @grey;
 
       span {
         font-size: 40px;
         vertical-align: middle;
+
+        @media (min-width: @sm) {
+          font-size: 60px;
+          .font-thin;
+        }
       }
     }
   }
