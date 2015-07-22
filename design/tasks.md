@@ -12,6 +12,6 @@
 
 +what's new badge on main video
 
--navigation hover
++navigation hover
 
 -video player
