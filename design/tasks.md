@@ -14,4 +14,8 @@
 
 +navigation hover
 
--video player
++video player
+
+-icon 
+
+-paragraph spacing (check chronicle)
