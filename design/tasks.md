@@ -5,10 +5,11 @@
 +popover alignment desktop
 +popover shadow
 
--what's new badge on main video
 +shadow on main video
 
 +videos clickable
--pagination clickible
++pagination clickible
+
+-what's new badge on main video
 
 -video player
