@@ -2,7 +2,7 @@
 
 -finish pagination styles
 
--popover alignment desktop
++popover alignment desktop
 -popover shadow
 
 -what's new badge on main video
