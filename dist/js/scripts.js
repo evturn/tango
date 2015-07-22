@@ -6,7 +6,6 @@ var BCTANGO = {
 
     BCTANGO.foldVideo();
 
-
     $('.navigation-open').on('click', function() {
       BCTANGO.toggleNavigation();
     });
@@ -155,7 +154,6 @@ var BCTANGO = {
   },
 
 };
-
 
 $(document).ready(function () {
   BCTANGO.init();

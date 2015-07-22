@@ -1,5 +1,7 @@
 -footer columns desktop
 
+-finish pagination styles
+
 -popover alignment desktop
 -popover shadow
 
