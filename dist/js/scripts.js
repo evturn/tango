@@ -28,17 +28,8 @@ var BCTANGO = {
       BCTANGO.togglePopover(e);
     });
 
-    $(document).on('mouseup', function(e) {
-      
-      if (!$(e.target).hasClass('fa-share-alt')) {
-        BCTANGO.setPopoverClose();
-
-      } 
-      else {
-        BCTANGO.setPopoverClose();
-
-      }
-
+    $(document).on('mouseup', function() {
+      BCTANGO.setPopoverClose();
     });
 
   },
@@ -79,6 +70,11 @@ var BCTANGO = {
     $(window).on('scroll', function() {
       var $windowTop = $(this).scrollTop();
       var $main = $('.video-main-info').offset().top;
+      var $mobileFoldUp = $('.fold-up-mobile');
+      var $mobileImage = $('.fold-up-mobile .img-scale');
+      var $mobileCategory = $('.fold-up-mobile .label-container');
+      var $mobileHeadline = $('.fold-up-mobile .headline-container');
+      var $desktopFoldUp = $('.fold-up-desktop');
 
       var shouldFoldVideo = $main < $windowTop;
       if (shouldFoldVideo === BCTANGO.isVideoFolded) {
@@ -86,35 +82,29 @@ var BCTANGO = {
       }
       
       BCTANGO.isVideoFolded = shouldFoldVideo;
-
-      var $foldUp = $('.fold-up-mobile');
-      var $image = $('.fold-up-mobile .img-scale');
-      var $imageLabel = $('.fold-up-mobile .label-container');
-      var $headline = $('.fold-up-mobile .headline-container');
-      var $lgWrapper = $('.fold-up-desktop');
       
       if (BCTANGO.isVideoFolded) {
-        $foldUp.removeClass('slideOutUp');
-        $lgWrapper.removeClass('scrolling-fixed slideOutUp');
-        $lgWrapper.addClass('scrolling-fixed slideInDown');
-        $image.addClass('slideInLeft');
-        $imageLabel.addClass('slideInLeft');
-        $image.removeClass('slideOutLeft');
-        $imageLabel.removeClass('slideOutLeft');
-        $headline.addClass('slideInRight');
-        $headline.removeClass('slideOutRight');
-        $foldUp.addClass('scrolling-fixed');
+        $mobileFoldUp.removeClass('slideOutUp');
+        $desktopFoldUp.removeClass('scrolling-fixed slideOutUp');
+        $desktopFoldUp.addClass('scrolling-fixed slideInDown');
+        $mobileImage.addClass('slideInLeft');
+        $mobileCategory.addClass('slideInLeft');
+        $mobileImage.removeClass('slideOutLeft');
+        $mobileCategory.removeClass('slideOutLeft');
+        $mobileHeadline.addClass('slideInRight');
+        $mobileHeadline.removeClass('slideOutRight');
+        $mobileFoldUp.addClass('scrolling-fixed');
 
       } 
       else {
-        $foldUp.addClass('slideOutUp');
-        $lgWrapper.removeClass('scrolling-fixed slideInDown');
-        $image.removeClass('slideInLeft');
-        $imageLabel.removeClass('slideInLeft');
-        $image.addClass('slideOutLeft');
-        $imageLabel.addClass('slideOutLeft');
-        $headline.removeClass('slideInRight');
-        $headline.addClass('slideOutRight');
+        $mobileFoldUp.addClass('slideOutUp');
+        $desktopFoldUp.removeClass('scrolling-fixed slideInDown');
+        $mobileImage.removeClass('slideInLeft');
+        $mobileCategory.removeClass('slideInLeft');
+        $mobileImage.addClass('slideOutLeft');
+        $mobileCategory.addClass('slideOutLeft');
+        $mobileHeadline.removeClass('slideInRight');
+        $mobileHeadline.addClass('slideOutRight');
 
       }
     });
@@ -140,13 +130,13 @@ var BCTANGO = {
       $wrapper.addClass('animated slideOutUp');
     
     }
-
   },
 
   openSearchBar: function() {
     var $collapsible = $('.collapsible');
     var $launchSearch = $('.search-launch');
     var $input = $('.search-input');
+
     $launchSearch.addClass('hidden');
     $collapsible.slideToggle(150);
     $collapsible.removeClass('hidden');
@@ -157,6 +147,7 @@ var BCTANGO = {
     var $collapsible = $('.collapsible');
     var $closeSearch = $('.search-field-collapse');
     var $launchSearch = $('.search-launch');
+
     $collapsible.slideToggle(150, function() {
     $launchSearch.removeClass('hidden');
     });
