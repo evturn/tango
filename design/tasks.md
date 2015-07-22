@@ -9,3 +9,5 @@
 -shadow on main video
 
 -videos clickable
+
+-video player
