@@ -1,4 +1,4 @@
--footer columns desktop
++footer columns desktop
 
 -finish pagination styles
 
