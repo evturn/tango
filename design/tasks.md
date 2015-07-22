@@ -8,7 +8,7 @@
 -what's new badge on main video
 +shadow on main video
 
--videos clickable
++videos clickable
 -pagination clickible
 
 -video player

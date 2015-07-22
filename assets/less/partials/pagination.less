@@ -57,12 +57,20 @@
 
       .header-text {
         font-family: @sans;
+        cursor: pointer;
 
         @media (min-width: @sm) {
           font-size: 20px;
         }
 
+        &:hover {
+          color: @grey;
+          .transition(0.2s);
+        }
+
       }
+
+
     }
 
     .previous {
