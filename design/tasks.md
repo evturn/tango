@@ -10,6 +10,8 @@
 +videos clickable
 +pagination clickible
 
--what's new badge on main video
++what's new badge on main video
+
+-navigation hover
 
 -video player

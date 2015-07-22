@@ -37,10 +37,17 @@
   .links-container {
     padding-bottom: 60px;
 
+
     .meta {
+      cursor: pointer;
       text-align: right;
       
+      &:hover span {
+        color: @secondary;
+      }
+
       span {
+        .transition(0.2s);
         color: @primary;
         font-size: 25px;
       }
