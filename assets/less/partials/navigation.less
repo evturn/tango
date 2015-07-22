@@ -46,6 +46,9 @@
     text-transform: uppercase;
     width: 100%;
     padding-top: 50px;
+    height: 70vh;
+    overflow: scroll;
+
     @media (min-width: @sm) {
       padding-top: 100px;
     }
@@ -64,13 +67,19 @@
     text-align: center;
     font-size: 28px;
     line-height: 3em;
+    cursor: pointer;
+
     a {
       text-decoration: none;
-      .transition(0.2s);
-
-      &:hover {
-        color: @primary;
+    }
+    
+    &:hover {
+      background-color: @primary;
+      
+      a {
+        color: @white;
       }
     }
+
   }
 }

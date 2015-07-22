@@ -6,6 +6,10 @@ var BCTANGO = {
 
     BCTANGO.foldVideo();
 
+    $('.navigation').on('mouseover', function() {
+      
+    });
+
     $('.navigation-open').on('click', function() {
       BCTANGO.toggleNavigation();
     });
@@ -111,7 +115,8 @@ var BCTANGO = {
 
   toggleNavigation: function() {
     var $wrapper = $('.navigation');
-    var $copy = $('.navigation-wrapper');
+    var $copy = $('.navigation-wrapper, .links-container');
+    var $body = $('body');
 
     if ($wrapper.hasClass('delay-short')) {
       $wrapper.removeClass('delay-short animated slideOutUp');
@@ -119,6 +124,7 @@ var BCTANGO = {
       $wrapper.addClass('animated slideInDown');
       $copy.addClass('delay-long animated fadeIn');
       $wrapper.removeClass('wrapper-hidden');
+      $body.css({'overflow': 'hidden'});
 
     } 
     else {
@@ -127,6 +133,7 @@ var BCTANGO = {
       $copy.removeClass('delay-long animated fadeIn');
       $copy.addClass('animated fadeOut');
       $wrapper.addClass('animated slideOutUp');
+      $body.css({'overflow': 'auto'});
     
     }
   },
