@@ -29,14 +29,22 @@
         outline: none;
       }
 
-      .fa {
-        .transition(0.2s);
+      .fa,
+      .header-text {
+        display: inline-block;
         cursor: pointer;
-
-        &:hover {
-          color: @primary;
-        }
       }
+
+      .header-text {
+        font-size: 26px;
+      }
+
+      &:hover .fa,
+      &:hover .header-text {
+        .transition(0.2s);
+        color: @primary;
+      }
+
     }
   }
 
