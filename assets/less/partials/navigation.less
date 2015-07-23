@@ -30,14 +30,20 @@
       }
 
       .fa,
-      .header-text {
+      .header-text { 
         display: inline-block;
         cursor: pointer;
         vertical-align: top;
+
       }
 
       .header-text {
+        display: none;
         font-size: 26px;
+
+        @media (min-width: @sm) {
+          display: inline-block;
+        }
       }
 
       &:hover .fa,

@@ -16,6 +16,6 @@
 
 +video player
 
--icon 
++icon 
 
 -paragraph spacing (check chronicle)
